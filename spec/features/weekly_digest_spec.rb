@@ -1,4 +1,4 @@
-RSpec.describe "create and deliver a weekly digest", type: :request do
+RSpec.describe "Weekly digests", type: :request do
   before do
     login_with_internal_app
 
@@ -57,7 +57,7 @@ RSpec.describe "create and deliver a weekly digest", type: :request do
     end
 
     email_data = expect_an_email_was_sent(
-      subject: "Weekly update from GOV.UK for: Subscriber list one"
+      subject: "Weekly update from GOV.UK for: Subscriber list one",
     )
 
     body = email_data.dig(:personalisation, :body)
@@ -96,11 +96,11 @@ RSpec.describe "create and deliver a weekly digest", type: :request do
     end
 
     expect_an_email_was_sent(
-      subject: "Weekly update from GOV.UK for: Subscriber list one"
+      subject: "Weekly update from GOV.UK for: Subscriber list one",
     )
 
     expect_an_email_was_sent(
-      subject: "Weekly update from GOV.UK for: Subscriber list two"
+      subject: "Weekly update from GOV.UK for: Subscriber list two",
     )
   end
 end
